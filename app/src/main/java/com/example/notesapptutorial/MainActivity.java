@@ -107,23 +107,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     private void checkmailverfication()
     {
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
-
-        if(firebaseUser.isEmailVerified()==true)
-        {
             Toast.makeText(getApplicationContext(),"Logged In",Toast.LENGTH_SHORT).show();
             finish();
             startActivity(new Intent(MainActivity.this,notesactivity.class));
-        }
-        else
-        {
-            mprogressbarofmainactivity.setVisibility(View.INVISIBLE);
-            Toast.makeText(getApplicationContext(),"Verify your mail first",Toast.LENGTH_SHORT).show();
-            firebaseAuth.signOut();
-        }
+
     }
 
 

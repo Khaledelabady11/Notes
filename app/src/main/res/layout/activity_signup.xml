@@ -30,9 +30,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New User"
+            android:text="Registration Form"
             android:textSize="42sp"
-            android:textColor="#FFBD4D"
+            android:textColor="#3F51B5"
             android:textStyle="bold">
 
         </TextView>
@@ -40,9 +40,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nice To See You Here"
+            android:text="Welcome"
             android:textSize="23sp"
-            android:textColor="#FF8596">
+            android:textColor="#3F51B5">
 
         </TextView>
 
@@ -92,27 +92,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <RelativeLayout
+    <Button
         android:id="@+id/signup"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/password"
         android:layout_marginLeft="30dp"
+        android:text="Sign Up"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/button_design">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="8dp"
-            android:text="Sign Up"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"></TextView>
-
-    </RelativeLayout>
+    </Button>
 
 
     <TextView

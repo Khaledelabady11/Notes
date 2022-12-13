@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,11 +20,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class signup extends AppCompatActivity {
 
-
     private EditText msignupemail,msignuppassword;
-    private RelativeLayout msignup;
+    private Button msignup;
     private TextView mgotologin;
-
 
     private FirebaseAuth firebaseAuth;
 
@@ -80,14 +79,11 @@ public class signup extends AppCompatActivity {
                             if(task.isSuccessful())
                             {
                                 Toast.makeText(getApplicationContext(),"Registration Successful",Toast.LENGTH_SHORT).show();
-                                sendEmailVerification();
                             }
                             else
                             {
                                 Toast.makeText(getApplicationContext(),"Failed To Register",Toast.LENGTH_SHORT).show();
                             }
-
-
                         }
                     });
 
@@ -98,29 +94,5 @@ public class signup extends AppCompatActivity {
 
 
     }
-
-    //send email verification
-    private void sendEmailVerification()
-    {
-        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
-        if(firebaseUser!=null)
-        {
-            firebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    Toast.makeText(getApplicationContext(),"Verification Email is Sent,Verify and Log In Again",Toast.LENGTH_SHORT).show();
-                    firebaseAuth.signOut();
-                    finish();
-                    startActivity(new Intent(signup.this,MainActivity.class));
-                }
-            });
-        }
-
-        else
-        {
-            Toast.makeText(getApplicationContext(),"Failed To Send Verification Email",Toast.LENGTH_SHORT).show();
-        }
-    }
-
 
 }

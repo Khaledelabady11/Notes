@@ -193,101 +193,101 @@ public class notesactivity extends AppCompatActivity {
                                 return false;
                             }
                         });
-                        popupMenu.getMenu().add("Export PDF").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                            @RequiresApi(api = Build.VERSION_CODES.O)
-                            @Override
-                            public boolean onMenuItemClick(MenuItem menuItem) {
-                                LocalDateTime datetime1 = now();
-                                DateTimeFormatter format = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
-                                String formatDateTime = datetime1.format(format);
-
-                                String stringFilePath = Environment.getExternalStorageDirectory().getPath() + "/Download/Note" + formatDateTime +".pdf";
-                                File file = new File(stringFilePath);
-
-                                PdfDocument pdfDocument = new PdfDocument();
-                                PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(300, 600, 1).create();
-                                PdfDocument.Page page = pdfDocument.startPage(pageInfo);
-
-                                Paint paint = new Paint();
-                                String stringPDF = firebasemodel.getTitle() + "\n\n" + firebasemodel.getContent();
-
-                                int x = 10, y = 25;
-
-                                for (String line:stringPDF.split("\n")){
-                                    page.getCanvas().drawText(line,x,y, paint);
-
-                                    y+=paint.descent()-paint.ascent();
-                                }
-                                pdfDocument.finishPage(page);
-                                try {
-                                    pdfDocument.writeTo(new FileOutputStream(file));
-                                    Toast.makeText(v.getContext(),"file pdf created",Toast.LENGTH_SHORT).show();
-                                }
-                                catch (Exception e){
-                                    Toast.makeText(v.getContext(),"file pdf didn't create",Toast.LENGTH_SHORT).show();
-                                }
-                                pdfDocument.close();
-
-                                return false;
-                            }
-                        });
-                        popupMenu.getMenu().add("Export docx").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                            @RequiresApi(api = Build.VERSION_CODES.O)
-                            @Override
-                            public boolean onMenuItemClick(MenuItem item) {
-                                LocalDateTime datetime1 = now();
-                                DateTimeFormatter format = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
-                                String formatDateTime = datetime1.format(format);
-
-                                String stringFilePath = Environment.getExternalStorageDirectory().getPath() + "/Download/Note" + formatDateTime +".docx";
-                                File file = new File(stringFilePath);
-
-                                try {
-                                    file.createNewFile();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                    Toast.makeText(v.getContext(),"file docx didn't create",Toast.LENGTH_SHORT).show();
-                                }
-
-                                try {
-                                    XWPFDocument xwpfDocument = new XWPFDocument();
-                                    XWPFParagraph xwpfParagraph = xwpfDocument.createParagraph();
-                                    XWPFRun xwpfRuntt = xwpfParagraph.createRun();
-                                    XWPFRun xwpfRunct = xwpfParagraph.createRun();
-
-                                    xwpfRuntt.setText(firebasemodel.getTitle() + "\n");
-                                    xwpfRuntt.addBreak();
-                                    xwpfRuntt.setFontSize(24);
-                                    xwpfRuntt.setBold(true);
-
-                                    //xwpfRun1.setText(firebasemodel.getContent());
-                                    String data = firebasemodel.getContent();
-                                    if(data.contains("\n")){
-                                        String[] lines = data.split("\n");
-                                        xwpfRunct.setText(lines[0], 0);
-                                        for(int i=1;i<lines.length;i++){
-                                            xwpfRunct.addBreak();
-                                            xwpfRunct.setText(lines[i]);
-                                        }
-                                    } else {
-                                        xwpfRunct.setText(data, 0);
-                                    }
-                                    xwpfRunct.setFontSize(16);
-
-
-                                    FileOutputStream fileOutputStream = new FileOutputStream(file);
-                                    xwpfDocument.write(fileOutputStream);
-
-                                    xwpfDocument.close();
-                                    Toast.makeText(v.getContext(),"file docx created",Toast.LENGTH_SHORT).show();
-                                }
-                                catch (Exception e){
-                                    e.printStackTrace();
-                                    Toast.makeText(v.getContext(),"file docx didn't create",Toast.LENGTH_SHORT).show();
-                                }
-                                return false;
-                            }
-                        });
+//                        popupMenu.getMenu().add("Export PDF").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+//                            @RequiresApi(api = Build.VERSION_CODES.O)
+//                            @Override
+//                            public boolean onMenuItemClick(MenuItem menuItem) {
+//                                LocalDateTime datetime1 = now();
+//                                DateTimeFormatter format = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
+//                                String formatDateTime = datetime1.format(format);
+//
+//                                String stringFilePath = Environment.getExternalStorageDirectory().getPath() + "/Download/Note" + formatDateTime +".pdf";
+//                                File file = new File(stringFilePath);
+//
+//                                PdfDocument pdfDocument = new PdfDocument();
+//                                PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(300, 600, 1).create();
+//                                PdfDocument.Page page = pdfDocument.startPage(pageInfo);
+//
+//                                Paint paint = new Paint();
+//                                String stringPDF = firebasemodel.getTitle() + "\n\n" + firebasemodel.getContent();
+//
+//                                int x = 10, y = 25;
+//
+//                                for (String line:stringPDF.split("\n")){
+//                                    page.getCanvas().drawText(line,x,y, paint);
+//
+//                                    y+=paint.descent()-paint.ascent();
+//                                }
+//                                pdfDocument.finishPage(page);
+//                                try {
+//                                    pdfDocument.writeTo(new FileOutputStream(file));
+//                                    Toast.makeText(v.getContext(),"file pdf created",Toast.LENGTH_SHORT).show();
+//                                }
+//                                catch (Exception e){
+//                                    Toast.makeText(v.getContext(),"file pdf didn't create",Toast.LENGTH_SHORT).show();
+//                                }
+//                                pdfDocument.close();
+//
+//                                return false;
+//                            }
+//                        });
+//                        popupMenu.getMenu().add("Export docx").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+//                            @RequiresApi(api = Build.VERSION_CODES.O)
+//                            @Override
+//                            public boolean onMenuItemClick(MenuItem item) {
+//                                LocalDateTime datetime1 = now();
+//                                DateTimeFormatter format = DateTimeFormatter.ofPattern("ddMMyyyyHHmmss");
+//                                String formatDateTime = datetime1.format(format);
+//
+//                                String stringFilePath = Environment.getExternalStorageDirectory().getPath() + "/Download/Note" + formatDateTime +".docx";
+//                                File file = new File(stringFilePath);
+//
+//                                try {
+//                                    file.createNewFile();
+//                                } catch (IOException e) {
+//                                    e.printStackTrace();
+//                                    Toast.makeText(v.getContext(),"file docx didn't create",Toast.LENGTH_SHORT).show();
+//                                }
+//
+//                                try {
+//                                    XWPFDocument xwpfDocument = new XWPFDocument();
+//                                    XWPFParagraph xwpfParagraph = xwpfDocument.createParagraph();
+//                                    XWPFRun xwpfRuntt = xwpfParagraph.createRun();
+//                                    XWPFRun xwpfRunct = xwpfParagraph.createRun();
+//
+//                                    xwpfRuntt.setText(firebasemodel.getTitle() + "\n");
+//                                    xwpfRuntt.addBreak();
+//                                    xwpfRuntt.setFontSize(24);
+//                                    xwpfRuntt.setBold(true);
+//
+//                                    //xwpfRun1.setText(firebasemodel.getContent());
+//                                    String data = firebasemodel.getContent();
+//                                    if(data.contains("\n")){
+//                                        String[] lines = data.split("\n");
+//                                        xwpfRunct.setText(lines[0], 0);
+//                                        for(int i=1;i<lines.length;i++){
+//                                            xwpfRunct.addBreak();
+//                                            xwpfRunct.setText(lines[i]);
+//                                        }
+//                                    } else {
+//                                        xwpfRunct.setText(data, 0);
+//                                    }
+//                                    xwpfRunct.setFontSize(16);
+//
+//
+//                                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+//                                    xwpfDocument.write(fileOutputStream);
+//
+//                                    xwpfDocument.close();
+//                                    Toast.makeText(v.getContext(),"file docx created",Toast.LENGTH_SHORT).show();
+//                                }
+//                                catch (Exception e){
+//                                    e.printStackTrace();
+//                                    Toast.makeText(v.getContext(),"file docx didn't create",Toast.LENGTH_SHORT).show();
+//                                }
+//                                return false;
+//                            }
+//                        });
                         popupMenu.show();
                     }
                 });

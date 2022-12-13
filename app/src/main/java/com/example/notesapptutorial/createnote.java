@@ -93,11 +93,6 @@ public class createnote extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
     }
 
 
