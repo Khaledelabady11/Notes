@@ -53,3 +53,4 @@ After this, you will be logged out and directed to the login screen.
 
 Then, you can again login or sign the application if you want. If user enter wrong credentials anywhere then you will got the appropriate toasts everywhere.
 Any User Can Sign Anywhere in Any Phone Just by using email and Passwords
+# Notes
