@@ -7,12 +7,8 @@ First Screen when the user opens the Notes Application-
 
 Enter your Email and password and login if you have already registered. Otherwise click on New User! Want To Sign In? button and then enter your working email and set a password of at least length of 7.
 
-![image](https://user-images.githubusercontent.com/64765400/111020743-ea003e80-837c-11eb-98ed-608e8394a1ac.png)
-
 
 User will got the email on the registered email and then verify the email first to use the application. After verification, simply login with your email and password. Then, you will get the below screen- 
-
-![image](https://user-images.githubusercontent.com/64765400/111020754-fb494b00-837c-11eb-94d5-e830f4e54feb.png)
 
 
 User can also recover the password if the user forgot the password by clicking on forgot password? on the login screen. After clicking, user will be directed to below screen. Here, user can enter the registered mail and easily recover the password using Email-
