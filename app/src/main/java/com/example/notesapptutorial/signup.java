@@ -70,7 +70,7 @@ public class signup extends AppCompatActivity {
                 }
                 else
                 {
-                    /// registered the user to firebase
+                    // registered the user to firebase
 
                     firebaseAuth.createUserWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override

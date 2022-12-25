@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "708987127075",
-    "project_id": "notesapptutorial",
-    "storage_bucket": "notesapptutorial.appspot.com"
+    "project_number": "860440039591",
+    "firebase_url": "https://notesapp-java-default-rtdb.firebaseio.com",
+    "project_id": "notesapp-java",
+    "storage_bucket": "notesapp-java.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:708987127075:android:571dbeb273af4f1310b896",
+        "mobilesdk_app_id": "1:860440039591:android:a09b4860f003cd0c890b82",
         "android_client_info": {
           "package_name": "com.example.notesapptutorial"
         }
       },
       "oauth_client": [
         {
-          "client_id": "708987127075-l4mprmgitjnftm0i1mep3ap9gb14haid.apps.googleusercontent.com",
+          "client_id": "860440039591-ibi11ck5q7pm4adtjn2v5afjc3t73fid.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDP0xZpbz8k1QjFu1UdqG2_cvJLH_Aen_0"
+          "current_key": "AIzaSyCDhkyv1_IlXtRYuEF4yNvPyEZ15WNESRo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "708987127075-l4mprmgitjnftm0i1mep3ap9gb14haid.apps.googleusercontent.com",
+              "client_id": "860440039591-ibi11ck5q7pm4adtjn2v5afjc3t73fid.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
